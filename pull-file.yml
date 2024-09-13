@@ -1,0 +1,10 @@
+---
+- name: Pull file(s) from ServerA to ServerB
+  hosts: all
+  tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /path/on/server_a
+        dest: /path/on/server_b
+        mode: pull
+      delegate_to: ServerB
